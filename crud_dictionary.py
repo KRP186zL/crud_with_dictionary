@@ -163,4 +163,4 @@ Tanggal Lahir\t: {hapus_data[masukkan_key_delete]["lahir"].strftime("%x")}''')
         print("\nMenu yang anda pilih tidak tersedia! \nSilahkan pilih kembali")
         time.sleep(1.5)
         os.system("clear")
-        pass
+        continue
