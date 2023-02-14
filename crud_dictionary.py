@@ -38,13 +38,13 @@ while True:
                 print("\nTanggal Lahir")
                 while True:
                     try:
-                        tahun = int(input("Masukkan Tahun(yyyy)\t: "))
+                        tahun = int(input("Masukkan Tahun(4 digit)\t: "))
                         bulan = int(input("Masukkan Bulan(1-12)\t: "))
                         tanggal = int(input("Masukkan Tanggal(1-31)\t: "))
                         mahasiswa["lahir"] = datetime.datetime(tahun,bulan,tanggal)
                         break
                     except ValueError:
-                        print("\n\nTangggal lahir ada yang salah, mohon cek kembali!")
+                        print("\n\nTangggal, bulan, atau tahun tidak Valid, Silahkan coba lagi!")
                         time.sleep(1.5)
 
                 KEY = "".join((random.choice(string.ascii_uppercase) for i in range (5)))
@@ -104,13 +104,13 @@ Tanggal Lahir\t: {update_data[masukkan_key_update]["lahir"].strftime("%x")}''')
                     print("\nTanggal Lahir")
                     while True:
                         try:
-                            tahun = int(input("Masukkan Tahun(yyyy)\t: "))
+                            tahun = int(input("Masukkan Tahun(4 digit)\t: "))
                             bulan = int(input("Masukkan Bulan(1-12)\t: "))
                             tanggal = int(input("Masukkan Tanggal(1-31)\t: "))
                             update_data["lahir"] = datetime.datetime(tahun,bulan,tanggal)
                             break
                         except ValueError:
-                            print("\n\nTangggal lahir ada yang salah, mohon cek kembali!")
+                            print("\n\nTangggal, bulan, atau tahun tidak Valid, Silahkan coba lagi!")
                             time.sleep(1.5)
                     data_mahasiswa.update({masukkan_key_update:update_data})
                     print("\n\nData berhasil di update !")
