@@ -93,14 +93,14 @@ while True:
             update_data = data_mahasiswa.copy()
             while True:
                 print("UPDATE MAHASISWA\n")
-                masukkan_key_update = input("Masukkan Key Mahasiswa yang ingin di update datanya(lihat menu 2). Exit(keluar): ").upper()
-                if masukkan_key_update in update_data:
+                key_update = input("Masukkan Key Mahasiswa yang ingin di update datanya(lihat menu 2). Exit(keluar): ").upper()
+                if key_update in update_data:
                     print(f'''\nData yang ingin anda update adalah:
-Nama\t\t: {update_data[masukkan_key_update]["nama"]}
-Nim\t\t: {update_data[masukkan_key_update]["nim"]}
-Kelas\t\t: {update_data[masukkan_key_update]["kelas"]}
-Prodi\t\t: {update_data[masukkan_key_update]["prodi"]}
-Tanggal Lahir\t: {update_data[masukkan_key_update]["lahir"].strftime("%x")}''')
+Nama\t\t: {update_data[key_update]["nama"]}
+Nim\t\t: {update_data[key_update]["nim"]}
+Kelas\t\t: {update_data[key_update]["kelas"]}
+Prodi\t\t: {update_data[key_update]["prodi"]}
+Tanggal Lahir\t: {update_data[key_update]["lahir"].strftime("%x")}''')
 
                     print("\n\nSilahkan masukkan data baru.")
                     #data baru
@@ -126,12 +126,12 @@ Tanggal Lahir\t: {update_data[masukkan_key_update]["lahir"].strftime("%x")}''')
                         except ValueError:
                             print("\n\nTangggal, bulan, atau tahun tidak Valid, Silahkan coba lagi!")
                             time.sleep(1.5)
-                    data_mahasiswa.update({masukkan_key_update:update_data})
+                    data_mahasiswa.update({key_update:update_data})
                     print("\n\nData berhasil di update !")
                     time.sleep(1.5)
                     break
 
-                elif (masukkan_key_update == "exit".upper()or masukkan_key_update == "keluar".upper()):
+                elif (key_update == "exit".upper()or key_update == "keluar".upper()):
                     break
 
                 else:
@@ -146,17 +146,17 @@ Tanggal Lahir\t: {update_data[masukkan_key_update]["lahir"].strftime("%x")}''')
             while True:
                 os.system("clear")
                 print("HAPUS MAHASISWA\n")
-                masukkan_key_delete = input("Masukkan Key Mahasiswa yang ingin di hapus datanya(lihat menu 2). Exit(keluar): ").upper()
-                if masukkan_key_delete in hapus_data:
+                key_delete = input("Masukkan Key Mahasiswa yang ingin di hapus datanya(lihat menu 2). Exit(keluar): ").upper()
+                if key_delete in hapus_data:
                     print(f'''\nData yang ingin anda hapus adalah:
-Nama\t\t: {hapus_data[masukkan_key_delete]["nama"]}
-Nim\t\t: {hapus_data[masukkan_key_delete]["nim"]}
-Kelas\t\t: {hapus_data[masukkan_key_delete]["kelas"]}
-Prodi\t\t: {hapus_data[masukkan_key_delete]["prodi"]}
-Tanggal Lahir\t: {hapus_data[masukkan_key_delete]["lahir"].strftime("%x")}''')
+Nama\t\t: {hapus_data[key_delete]["nama"]}
+Nim\t\t: {hapus_data[key_delete]["nim"]}
+Kelas\t\t: {hapus_data[key_delete]["kelas"]}
+Prodi\t\t: {hapus_data[key_delete]["prodi"]}
+Tanggal Lahir\t: {hapus_data[key_delete]["lahir"].strftime("%x")}''')
                     hapus = input("Ketik [delete/hapus] untuk menghapus data: ").lower()
                     if hapus == "delete" or hapus == "hapus":
-                        del data_mahasiswa[masukkan_key_delete]
+                        del data_mahasiswa[key_delete]
                         print("\n\nData berhasil dihapus!")
                         time.sleep(1.5)
                         break
@@ -165,7 +165,7 @@ Tanggal Lahir\t: {hapus_data[masukkan_key_delete]["lahir"].strftime("%x")}''')
                         print("Data tidak jadi dihapus!")
                         time.sleep(1.5)
                         
-                elif masukkan_key_delete == "exit".upper()or masukkan_key_delete == "keluar".upper():
+                elif key_delete == "exit".upper()or key_delete == "keluar".upper():
                     break
 
                 else:
