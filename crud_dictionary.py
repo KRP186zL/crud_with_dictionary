@@ -26,7 +26,7 @@ while True:
         menu = int(input("Masukkan Pilihan Anda [1/2/3/4/5]: "))
 
 
-        if menu == 1:
+        if (menu == 1):
             while True:
                 os.system("clear")
                 print("TAMBAHKAN MAHASISWA\n")
@@ -62,7 +62,7 @@ while True:
                 break
                     
 
-        elif menu == 2 : 
+        elif (menu == 2): 
             os.system("clear")
             while True:
                 print("LIHAT MAHASISWA\n")
@@ -80,7 +80,7 @@ while True:
 
                     print(f"{key:<8} {nama:<23} {nim:<13} {kelas:^6} {prodi:^18} {lahir:^13}")
                 ganti_menu = input("\n\nKeluar [y]: ")
-                if ganti_menu == "y".lower():
+                if (ganti_menu == "y".lower()):
                     os.system("clear")
                     break
                 else:
@@ -88,13 +88,13 @@ while True:
                     continue
 
 
-        elif menu == 3 :
+        elif (menu == 3):
             os.system("clear")
             update_data = data_mahasiswa.copy()
             while True:
                 print("UPDATE MAHASISWA\n")
                 key_update = input("Masukkan Key Mahasiswa yang ingin di update datanya(lihat menu 2). Exit(keluar): ").upper()
-                if key_update in update_data:
+                if (key_update in update_data):
                     print(f'''\nData yang ingin anda update adalah:
 Nama\t\t: {update_data[key_update]["nama"]}
 Nim\t\t: {update_data[key_update]["nim"]}
@@ -140,14 +140,14 @@ Tanggal Lahir\t: {update_data[key_update]["lahir"].strftime("%x")}''')
                     os.system("clear")
                     continue
                 
-        elif menu == 4 :
+        elif (menu == 4):
             os.system("clear")
             hapus_data = data_mahasiswa.copy()
             while True:
                 os.system("clear")
                 print("HAPUS MAHASISWA\n")
                 key_delete = input("Masukkan Key Mahasiswa yang ingin di hapus datanya(lihat menu 2). Exit(keluar): ").upper()
-                if key_delete in hapus_data:
+                if (key_delete in hapus_data):
                     print(f'''\nData yang ingin anda hapus adalah:
 Nama\t\t: {hapus_data[key_delete]["nama"]}
 Nim\t\t: {hapus_data[key_delete]["nim"]}
@@ -155,7 +155,7 @@ Kelas\t\t: {hapus_data[key_delete]["kelas"]}
 Prodi\t\t: {hapus_data[key_delete]["prodi"]}
 Tanggal Lahir\t: {hapus_data[key_delete]["lahir"].strftime("%x")}''')
                     hapus = input("Ketik [delete/hapus] untuk menghapus data: ").lower()
-                    if hapus == "delete" or hapus == "hapus":
+                    if (hapus == "delete" or hapus == "hapus"):
                         del data_mahasiswa[key_delete]
                         print("\n\nData berhasil dihapus!")
                         time.sleep(1.5)
@@ -165,7 +165,7 @@ Tanggal Lahir\t: {hapus_data[key_delete]["lahir"].strftime("%x")}''')
                         print("Data tidak jadi dihapus!")
                         time.sleep(1.5)
                         
-                elif key_delete == "exit".upper()or key_delete == "keluar".upper():
+                elif (key_delete == "exit".upper()or key_delete == "keluar".upper()):
                     break
 
                 else:
@@ -175,7 +175,7 @@ Tanggal Lahir\t: {hapus_data[key_delete]["lahir"].strftime("%x")}''')
                     continue
             
 
-        elif menu == 5 :
+        elif (menu == 5):
             print("\n\nProgram dihentikan !".upper())
             exit()
         
