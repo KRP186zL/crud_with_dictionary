@@ -32,7 +32,14 @@ while True:
                 print("TAMBAHKAN MAHASISWA\n")
                 mahasiswa = dict.fromkeys(template_mahasiswa.keys())
                 mahasiswa["nama"] = input("Masukkan Nama\t\t: ").title()
-                mahasiswa["nim"] = input("Masukkan Nim\t\t: ")
+
+                while True:
+                    try:
+                        mahasiswa["nim"] = int(input("Masukkan Nim\t\t: "))
+                        break
+                    except ValueError:
+                        print("\n\nNim harus berupa angka !\n")
+
                 mahasiswa["kelas"] = input("Masukkan Kelas\t\t: ").title()
                 mahasiswa["prodi"] = input("Masukkan Prodi\t\t: ").title()
                 print("\nTanggal Lahir")
@@ -98,7 +105,14 @@ Tanggal Lahir\t: {update_data[masukkan_key_update]["lahir"].strftime("%x")}''')
                     print("\n\nSilahkan masukkan data baru.")
                     #data baru
                     update_data['nama'] = input("Masukkan Nama\t: ").title()
-                    update_data['nim'] = input("Masukkan Nim\t: ").title()
+
+                    while True:
+                        try:
+                            update_data["nim"] = int(input("Masukkan Nim\t: "))
+                            break
+                        except ValueError:
+                            print("\n\nNim harus berupa angka !\n")
+
                     update_data['kelas'] = input("Masukkan Kelas\t: ").title()
                     update_data['prodi'] = input("Masukkan Prodi\t: ").title()
                     print("\nTanggal Lahir")
@@ -117,7 +131,7 @@ Tanggal Lahir\t: {update_data[masukkan_key_update]["lahir"].strftime("%x")}''')
                     time.sleep(1.5)
                     break
 
-                elif masukkan_key_update == "exit".upper():
+                elif (masukkan_key_update == "exit".upper()or masukkan_key_update == "keluar".upper()):
                     break
 
                 else:
@@ -140,7 +154,7 @@ Nim\t\t: {hapus_data[masukkan_key_delete]["nim"]}
 Kelas\t\t: {hapus_data[masukkan_key_delete]["kelas"]}
 Prodi\t\t: {hapus_data[masukkan_key_delete]["prodi"]}
 Tanggal Lahir\t: {hapus_data[masukkan_key_delete]["lahir"].strftime("%x")}''')
-                    hapus = input("Ketik [delete] untuk menghapus data: ").lower()
+                    hapus = input("Ketik [delete/hapus] untuk menghapus data: ").lower()
                     if hapus == "delete" or hapus == "hapus":
                         del data_mahasiswa[masukkan_key_delete]
                         print("\n\nData berhasil dihapus!")
@@ -151,7 +165,7 @@ Tanggal Lahir\t: {hapus_data[masukkan_key_delete]["lahir"].strftime("%x")}''')
                         print("Data tidak jadi dihapus!")
                         time.sleep(1.5)
                         
-                elif masukkan_key_delete == "exit".upper():
+                elif masukkan_key_delete == "exit".upper()or masukkan_key_delete == "keluar".upper():
                     break
 
                 else:
@@ -165,13 +179,15 @@ Tanggal Lahir\t: {hapus_data[masukkan_key_delete]["lahir"].strftime("%x")}''')
             print("\n\nProgram dihentikan !".upper())
             exit()
         
-        
+      
         else :
             print("\nMenu yang anda pilih tidak tersedia! \nSilahkan pilih kembali")
             time.sleep(1.5)
             os.system("clear")
             continue
+
         pass
+    
     except ValueError:
         print("\n\nMohon gunakan angka!")
         time.sleep(1.5)
